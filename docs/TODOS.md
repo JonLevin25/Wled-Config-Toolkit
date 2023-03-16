@@ -12,15 +12,11 @@ Example:
 
 -----------------
 ### Repo + flow test
-1. rename "templates" to "cfgs"
-5. Setup FOSS repo
 6. Test FOSS repo flow
    - In VM: install Python 3.10
    - follow readme instructions
    - create conf file from example
    - test build+upload+verify wled-config file
-7. Labyrinth - use FOSS submodule
-
 -------------------
 
 ## v2 (NOT NOW)

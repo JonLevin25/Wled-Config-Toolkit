@@ -3,7 +3,7 @@ If you have multiple WLED instances, you might find it useful to break the confi
 
 **NOTE**: Before using overrides, you'll want to also [get your wled's cfg.json file][get_cfg_json] and create a `base_cfg.json`
 
-See [WLED cfg.json structure](./cfg_json_structure.md) for more info on what config keys are available and what they mean. 
+See [WLED cfg.json structure](./Cfg_Json_Structure.md) for more info on what config keys are available and what they mean. 
 
 
 
@@ -127,4 +127,4 @@ Note: Depending on your use case, you may or may not want to have a default sett
 
 Check the examples in the [cfg_modules directory][cfg_modules] for more ideas on how to compose different configs.
 
-[get_cfg_json]: ./getting_cfg_jsons.md
+[get_cfg_json]: ./Getting_Cfg_Json_From_A_WLED.md
