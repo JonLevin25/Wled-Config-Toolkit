@@ -33,9 +33,12 @@ def write_cfg_jsons(mdns_to_cfg_map: Dict[str, str], settings: BuildSettings, in
 
 
 def build_cfg_jsons_from_conf(settings: BuildSettings) -> Dict[str, Any]:
-    print(f"Loading wled-config file: {settings.conf_file_path}")
-    loaded_conf = resolve_json_to_object(settings.conf_file_path)
-    print(f"Building wled-config file: {settings.conf_file_path}"
+    wled_config_path = settings.conf_file_path
+    print(f"Loading wled-config file: {wled_config_path}")
+    if not path.isfile(wled_config_path):
+        raise FileNotFoundError(f"No wled-config file found! expected path: {path.abspath(wled_config_path)}")
+    loaded_conf = resolve_json_to_object(wled_config_path)
+    print(f"Building wled-config file: {wled_config_path}"
           f"{f'(configs: {settings.cfgs_to_build})' if settings.cfgs_to_build else ''}")
 
     # Add all cfg.jsons to our map

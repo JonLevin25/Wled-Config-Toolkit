@@ -1,0 +1,42 @@
+{
+  "hw": {
+    "led": {
+      "ins": [
+        {
+          "start": 0,
+          "len": 100,
+          "pin": [
+            13
+          ],
+          "order": 0,
+          "rev": false,
+          "skip": 0,
+          "type": 22,
+          "ref": false
+        },
+        {
+          "start": 100,
+          "len": 200,
+          "pin": [
+            14
+          ],
+          "order": 0,
+          "rev": false,
+          "skip": 0,
+          "type": 22,
+          "ref": false
+        },
+                {
+          "start": 200,
+          "len": 100,
+          "pin": [27],
+          "order": 0,
+          "rev": false,
+          "skip": 0,
+          "type": 22,
+          "ref": false
+        }
+      ]
+    }
+  }
+}

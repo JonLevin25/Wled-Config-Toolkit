@@ -1,11 +1,17 @@
 from src.build_pipeline import *
 from src.settings import BuildSettings
 
+import os.path as path
+
+CONFIG_DATA_DIR = "../wled-config-data"
 
 def _custom_config_build():
     run_build(
         BuildSettings(
             conf_file_path=CONF_FILES.home,
+            cfg_modules_dir=path.join(CONFIG_DATA_DIR, "cfg_modules"),
+            cfg_cache_dir=path.join(CONFIG_DATA_DIR, "generated"),
+
 
             # To run the build for only some of the controllers in the wled-config file - define them here
             # cfgs_to_build=["192.168.50.3"],
@@ -29,12 +35,12 @@ def _custom_config_build():
 
 
 class CONF_FILES:
-    minis = "data/mini.wled-config.json"
-    teder = "data/teder.wled-config.json"
-    burn = "data/burn.wled-config.json"
-    multi_panel_test = 'data/multi_panel_test.wled-config.json'
-    science_museum = "data/science_museum.wled-config.json"
-    home = "data/home.wled-config.json"
+    minis = path.join(CONFIG_DATA_DIR, "mini.wled-config.json")
+    teder = path.join(CONFIG_DATA_DIR, "teder.wled-config.json")
+    burn = path.join(CONFIG_DATA_DIR, "burn.wled-config.json")
+    multi_panel_test = path.join(CONFIG_DATA_DIR, 'multi_panel_test.wled-config.json')
+    science_museum = path.join(CONFIG_DATA_DIR, "science_museum.wled-config.json")
+    home = path.join(CONFIG_DATA_DIR, "home.wled-config.json")
 
 
 class CONTROLLERS_MDNS:

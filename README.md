@@ -1,4 +1,4 @@
-# WLED Config CLI
+# WLED Config Toolkit
 A Python/Command-line tool for modular configuration of WLED instances over the network.
 
 ## Features
@@ -27,7 +27,7 @@ For more detailed information and advanced usage, see the [Advanced Usage][advan
 > This tool has some validation to check critical things like AP config hasn't changed, and WIFI has an SSID, but there can still be data loss.
 
 ## Integrating into python projects
-To use the python API, take a look at [run_config_build.py](./src/run_config_build.py) as an example.
+To use the python API, take a look at [src/example_run_config_build.py](src/example_run_config_build.py) as an example.
 
 ## How does it work
 WLED configuration can be mostly handled with [cfg.json](https://kno.wled.ge/interfaces/json-api/) files. <br/>

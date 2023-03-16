@@ -6,7 +6,7 @@ from src.settings.consts import *
 
 
 class ConfigCLIArgs(argparse.Namespace):
-    conf_file: str
+    config: str
     build: bool
     build_cached: bool
     upload: bool
@@ -57,7 +57,7 @@ def parse_config_args() -> ConfigCLIArgs:
 
 
 def args_to_settings(args: ConfigCLIArgs) -> (BuildSettings, set[CONFIG_ACTION]):
-    settings = BuildSettings(args.conf_file, args.cfg_modules_dir, args.cache_dir,
+    settings = BuildSettings(args.config, args.cfg_modules_dir, args.cache_dir,
                              cfgs_to_build=None,
                              renames=None)
 

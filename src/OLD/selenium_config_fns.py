@@ -8,8 +8,8 @@
 # import requests
 # from typing import Dict, Any
 #
-# def manual_cfg_upload_selenium(conf_file: str, cfgs_to_build = None):
-#     mdns_to_cfg_map = build_cfg_jsons_from_conf(conf_file)
+# def manual_cfg_upload_selenium(config: str, cfgs_to_build = None):
+#     mdns_to_cfg_map = build_cfg_jsons_from_conf(config)
 #     mdns_to_files_map = write_cfg_jsons(mdns_to_cfg_map)
 #     for mdns_name in mdns_to_files_map:
 #         selenium_open_edit_page(mdns_name)  # use new driver so we dont change page

@@ -9,4 +9,4 @@ if __name__ == '__main__':
     run_build(settings, actions)
     print(args.build)
     # pprint(args)
-    # print(args.conf_file)
+    # print(args.config)
