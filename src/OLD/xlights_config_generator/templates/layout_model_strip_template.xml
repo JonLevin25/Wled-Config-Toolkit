@@ -1,0 +1,21 @@
+    <model DisplayAs="Single Line" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="1" Transparency="0"
+           parm1="1" parm3="1" LayoutGroup="Default" parm2="360"
+           name="<MDNS>_L<LIGHTNUM>" ShadowModelFor="" Controller="CTL_<MDNS>"
+           WorldPosX="<PosX>" WorldPosY="<PosY>" WorldPosZ="<PosZ>"
+           X2="<PosX2>" Y2="<PosY2>" Z2="<PosZ2>"
+           versionNumber="5" StartChannel="!CTL_<MDNS>:<StartChannel>">
+
+      <ControllerConnection Protocol="ws2811" Port="<LIGHTNUM>"/>
+      <subModel name="left" layout="horizontal" type="ranges" bufferstyle="Default" line0="1-120">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="top" layout="horizontal" type="ranges" bufferstyle="Default" line0="121-180">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="right" layout="horizontal" type="ranges" bufferstyle="Default" line0="181-300">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="bottom" layout="horizontal" type="ranges" bufferstyle="Default" line0="301-360">
+        <ControllerConnection/>
+      </subModel>
+    </model>

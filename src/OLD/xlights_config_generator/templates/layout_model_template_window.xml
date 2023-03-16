@@ -1,0 +1,24 @@
+    
+    <!-- TODO: Note rotation -->
+    <model DisplayAs="Window Frame" StringType="RGB Nodes" StartSide="B" Dir="L" Antialias="1" PixelSize="2" Transparency="0"
+        Rotation="CW" LayoutGroup="Default" parm1="60" parm2="120" parm3="60"
+        Controller="CTL_<MDNS>" name="<MDNS>_L<LIGHTNUM>"
+        WorldPosX="0.0000" WorldPosY="0.0000" WorldPosZ="0.0000"
+        ScaleX="1.0000" ScaleY="1.0000" ScaleZ="1.0000"
+        RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000"
+        versionNumber="5"
+        StartChannel="!CTL_<MDNS>:<LIGHTNUM>">
+      <ControllerConnection Protocol="ws2811" Port="1"/>
+      <subModel name="left" layout="horizontal" type="ranges" bufferstyle="Default" line0="1-120">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="top" layout="horizontal" type="ranges" bufferstyle="Default" line0="121-180">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="right" layout="horizontal" type="ranges" bufferstyle="Default" line0="180-300">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="bottom" layout="horizontal" type="ranges" bufferstyle="Default" line0="301-360">
+        <ControllerConnection/>
+      </subModel>
+    </model>

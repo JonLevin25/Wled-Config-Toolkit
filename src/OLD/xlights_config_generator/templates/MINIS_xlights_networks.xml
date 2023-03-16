@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Networks computer="JEPHYRUS" GlobalFPPProxy="" GlobalForceLocalIP="">
+  <Controller Id="1" Name="CTL_mini_paciphea" Description="" Type="Ethernet" Vendor="WLED" Model="WLED" Variant="Generic ESP32" AutoSize="0" FullxLightsControl="TRUE" DefaultBrightnessUnderFullControl="100" DefaultGammaUnderFullControl="1" ActiveState="Active" AutoLayout="0" AutoUpload="0" SuppressDuplicates="0" IP="mini_paciphea.local" Protocol="E131" FPPProxy="" Priority="100" Version="1" Expanded="FALSE" UPS="FALSE" ForceLocalIP="">
+    <network ComPort="mini_paciphea.local" BaudRate="1" NetworkType="E131" MaxChannels="510"/>
+  </Controller>
+  <Controller Id="2" Name="CTL_mini_theseus" Description="" Type="Ethernet" Vendor="WLED" Model="WLED" Variant="Generic ESP32" AutoSize="0" FullxLightsControl="TRUE" DefaultBrightnessUnderFullControl="100" DefaultGammaUnderFullControl="1" ActiveState="Active" AutoLayout="0" AutoUpload="0" SuppressDuplicates="0" IP="mini_theseus.local" Protocol="E131" FPPProxy="" Priority="100" Version="1" Expanded="FALSE" UPS="FALSE" ForceLocalIP="">
+    <network ComPort="mini_theseus.local" BaudRate="7" NetworkType="E131" MaxChannels="510"/>
+  </Controller>
+  <Controller Id="2" Name="CTL_mini_pocidon" Description="" Type="Ethernet" Vendor="WLED" Model="WLED" Variant="Generic ESP32" AutoSize="0" FullxLightsControl="TRUE" DefaultBrightnessUnderFullControl="100" DefaultGammaUnderFullControl="1" ActiveState="Active" AutoLayout="0" AutoUpload="0" SuppressDuplicates="0" IP="mini_pocidon.local" Protocol="E131" FPPProxy="" Priority="100" Version="1" Expanded="FALSE" UPS="FALSE" ForceLocalIP="">
+    <network ComPort="mini_pocidon.local" BaudRate="14" NetworkType="E131" MaxChannels="510"/>
+  </Controller>
+</Networks>

@@ -1,0 +1,48 @@
+
+<!-- MINIS -->
+    <model DisplayAs="Window Frame" StringType="RGB Nodes" Antialias="1" PixelSize="2" Transparency="0" LayoutGroup="Default" Dir="R" StartSide="B" Rotation="Counter Clockwise" parm1="18" parm2="36" parm3="18" name="MDL_mini_pocidon" WorldPosX="1425.7576" WorldPosY="-3.7966" WorldPosZ="211.2659" ScaleX="5.6974" ScaleY="8.3745" ScaleZ="0.0526" RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000" versionNumber="5" StartChannel="1021">
+      <subModel name="right" layout="horizontal" type="ranges" bufferstyle="Default" line0="1-36">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="top" layout="horizontal" type="ranges" bufferstyle="Default" line0="54-37">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="left" layout="horizontal" type="ranges" bufferstyle="Default" line0="55-90">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="bottom" layout="horizontal" type="ranges" bufferstyle="Default" line0="91-108">
+        <ControllerConnection/>
+      </subModel>
+      <ControllerConnection/>
+    </model>
+    <model DisplayAs="Window Frame" StringType="RGB Nodes" Antialias="1" PixelSize="2" Transparency="0" LayoutGroup="Default" Dir="R" StartSide="B" Rotation="Counter Clockwise" parm1="18" parm2="36" parm3="18" name="MDL_mini_theseus" WorldPosX="1278.0330" WorldPosY="-3.2647" WorldPosZ="211.2659" ScaleX="5.6974" ScaleY="8.3745" ScaleZ="0.0526" RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000" versionNumber="5" StartChannel="511">
+      <subModel name="right" layout="horizontal" type="ranges" bufferstyle="Default" line0="1-36">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="top" layout="horizontal" type="ranges" bufferstyle="Default" line0="54-37">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="left" layout="horizontal" type="ranges" bufferstyle="Default" line0="55-90">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="bottom" layout="horizontal" type="ranges" bufferstyle="Default" line0="91-108">
+        <ControllerConnection/>
+      </subModel>
+      <ControllerConnection/>
+    </model>
+    <model DisplayAs="Window Frame" StringType="RGB Nodes" Antialias="1" PixelSize="2" Transparency="0" LayoutGroup="Default" Dir="R" StartSide="B" name="MDL_mini_paciphea" Rotation="Counter Clockwise" parm1="18" parm2="36" parm3="18" WorldPosX="1125.6753" WorldPosY="-3.8413" WorldPosZ="211.2659" ScaleX="5.6974" ScaleY="8.3745" ScaleZ="0.0526" RotateX="0.00000000" RotateY="0.00000000" RotateZ="0.00000000" versionNumber="5" StartChannel="1">
+      <ControllerConnection Protocol="ws2811"/>
+      <subModel name="right" layout="horizontal" type="ranges" bufferstyle="Default" line0="1-36">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="top" layout="horizontal" type="ranges" bufferstyle="Default" line0="54-37">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="left" layout="horizontal" type="ranges" bufferstyle="Default" line0="55-90">
+        <ControllerConnection/>
+      </subModel>
+      <subModel name="bottom" layout="horizontal" type="ranges" bufferstyle="Default" line0="91-108">
+        <ControllerConnection/>
+      </subModel>
+    </model>
+    <!-- END MINIS -->
