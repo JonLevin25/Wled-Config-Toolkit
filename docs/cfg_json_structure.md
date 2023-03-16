@@ -1,0 +1,99 @@
+# Cfg.json strucutre and keys
+Below are some keys for cfg.json.
+
+This is a rough WIP doc and by no means complete, but should help get you started.
+**Note**: the bullets below are indented to reflect the structure of `cfg.json`,
+
+- rev - revision info
+- vid - version id [example value:  2203150]
+- id - (module-speific) identification
+    - mdns - hostname
+    - name
+    - inv - ? [val: Light]
+- nw - basic network config
+    - (for control protocols see if - interfaces and sync) 
+    - ins - network instance (currently only one, maybe more in future)
+- ap - wireless AP (Network config)
+- wifi
+    - sleep - is the modem allowed to sleep? (bool - default false)   
+- light - light and logical led settings 
+    - scale-bri ‒ Brightness scale (percentage, 0-100)
+    - pal-mode
+    - aseg [bool] - automatically create segments from pin  
+    - gc
+    - tr - color transitions (crossfade)
+        - mode [bool] ‒ are transitions enabled?
+        - dur ‒ duration of color transition (x100ms)
+        - pal [int] ‒ are palette transitions enabled? (0/1). Unaffected by duration
+    - nl
+- hw - hardware settings
+    - led - leds
+        - total  ‒ total amount of leds (deprecated - kept for compatibility, no need to set)
+        - maxpwr - max mA allowed
+        - ledma [int] - mA per leds (number). 0 for off
+        - cct [bool] ‒ enable color correction temperature
+            - Aliases
+            - This just enables/disables the feature
+            - At runtime must send cct value in seg array 
+        - fps ‒ target fps (default: 4)
+        - ins [array] ‒ instances of led strips
+            - start ‒ the start pixel of the strip
+            - len ‒ the number of pixels in the strip
+            - pin [array] ‒ the pin to control the strip (array for WS2813's?)
+            - order ‒ led color order
+                - 0 - GRB (Default)
+            - rev ‒ reverse strip
+            - skip ‒ skip 1st led
+            - type ‒ led strip type
+                - 22 ‒ WS281x
+            - ref [bool] ‒ "Off Refresh" (??)
+    - com - ?
+    - btn - buttons
+    - ir - infrared?
+    - relay
+    - baud - [value: 1152]
+    - analogmic [Sound Reactive]
+    - digitalmic
+    - def - ?
+    - if - interface
+    - ol - overlay?
+    - timers
+    - ota
+    - snd
+- if - interfaces and sync
+    - sync
+        - recv ‒ data to receive from another syncing instance
+            - grp ‒ sync group to receive from
+            - bri ‒ receive brightness
+            - col ‒ receive colors / palettes
+            - fx ‒ receive fx
+            - seg ‒ receive segment settings (?) 
+            - sb ‒ receive segment bounds (?)
+        - send ‒ data to send to other instances
+            - grp ‒ sync group to broadcast on
+            - twice ‒ send packets twice, if you're having trouble with UDP
+            - dir ‒ sync others on "direct change" (wled ui or API)
+            - btn ‒ sync others on btn press / IR
+            - va ‒ sync alexa notification
+            - hue ‒ sync phillips hue notifications
+            - macro ‒ sync macro noifications 
+    - nodes - "interface list"
+        - list [bool] ‒ enable interface list
+        - bcast [bool] ‒ broadcast this instance to others
+    - live ‒ external (per-led) control protocols
+        - en [bool] ‒ enable live control
+        - mc [bool] ‒ multicast enable
+        - dmx
+            - uni ‒ start universe (carries over to next universe after 510 channels) 
+            - port ‒ the protocol (and hence port) to use.
+                - 5568 - sACN / E.131 
+                - 6454 ‒ ArtNet?
+                - <custom> ‒ custom UDP port can be used 
+            - seqskip ‒ skip "out of order packets"
+            - addr ‒ dmx start address (channel?)
+            - mode ‒ DMX mode (usually 4 / Multi RGB )
+        - timeout [100ms multiple] ‒ how long after last "live" packet to return to regular WLED control
+        - maxbri [bool] ‒ force max brightness?
+        - nogc ‒ disable realtime gamma correction?
+        - offset ‒ realtime led offset 
+    - va ‒ voice assistant settings
