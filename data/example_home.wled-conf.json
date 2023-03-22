@@ -1,22 +1,9 @@
 {
-  "$common": {
-    "cfg_modules": [
-      "example_base_cfg.json",
-      "cfg_auto_segments",
-      "sound/cfg_sync_off"
-    ],
-    "overrides": {}
-  },
-
-  "wled-livingroom":{
-    "cfg_modules": ["example_cfg_strips_3x100"],
-    "overrides": {}
-  },
-
+  "$common": { "cfg_modules": ["cfg_base"] },
   "wled-bedroom": {
-    "cfg_modules": ["example_cfg_strips_2x100","sound/cfg_digital_mic_pins"],
-    "overrides": {
-      "light": { "aseg": false }
-    }
+    "cfg_modules": ["cfg_strips_2x100"]
+  },
+  "wled-livingroom": {
+    "cfg_modules": ["cfg_strips_1x100"]
   }
 }
