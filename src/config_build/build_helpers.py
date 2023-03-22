@@ -26,8 +26,9 @@ def extract_json_conf_data(conf_obj: Dict[str, Any], name: str, cfg_modules_dir:
         return [], {}
 
     cfg = conf_obj[name]
-    cfg_modules = [path_forced_root(cfg_modules_dir, t) for t in cfg['cfg_modules']]
-    overrides: Dict = cfg['overrides']
+    cfg_modules = [path_forced_root(cfg_modules_dir, t)
+                   for t in cfg['cfg_modules']]
+    overrides: Dict = cfg['overrides'] if 'overrides' in cfg else {}
     return cfg_modules, overrides
 
 
