@@ -13,7 +13,7 @@ def _custom_config_build():
             cfg_cache_dir=path.join(CONFIG_DATA_DIR, "generated"),
 
 
-            # To run the build for only some of the controllers in the wled-config file - define them here
+            # To run the build for only some of the controllers in the wled-conf file - define them here
             # cfgs_to_build=["192.168.50.3"],
             # To rename controllers:
             #    * first make sure CONF_FILE has the NEW names!
@@ -35,12 +35,12 @@ def _custom_config_build():
 
 
 class CONF_FILES:
-    minis = path.join(CONFIG_DATA_DIR, "mini.wled-config.json")
-    teder = path.join(CONFIG_DATA_DIR, "teder.wled-config.json")
-    burn = path.join(CONFIG_DATA_DIR, "burn.wled-config.json")
-    multi_panel_test = path.join(CONFIG_DATA_DIR, 'multi_panel_test.wled-config.json')
-    science_museum = path.join(CONFIG_DATA_DIR, "science_museum.wled-config.json")
-    home = path.join(CONFIG_DATA_DIR, "home.wled-config.json")
+    minis = path.join(CONFIG_DATA_DIR, "mini.wled-conf.json")
+    teder = path.join(CONFIG_DATA_DIR, "teder.wled-conf.json")
+    burn = path.join(CONFIG_DATA_DIR, "burn.wled-conf.json")
+    multi_panel_test = path.join(CONFIG_DATA_DIR, 'multi_panel_test.wled-conf.json')
+    science_museum = path.join(CONFIG_DATA_DIR, "science_museum.wled-conf.json")
+    home = path.join(CONFIG_DATA_DIR, "home.wled-conf.json")
 
 
 class CONTROLLERS_MDNS:

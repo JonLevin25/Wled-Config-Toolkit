@@ -17,7 +17,7 @@ def write_cfg_jsons(mdns_to_cfg_map: Dict[str, str], settings: BuildSettings, in
     Returns a map from the same hostnames to files.
     """
 
-    # all names: strictly loaded wled-config object
+    # all names: strictly loaded wled-conf object
     all_names = [*mdns_to_cfg_map]
     mdns_to_filepath_map = {name: get_cfg_file_path(name, settings.cfg_cache_dir, settings.renames) for name in
                             all_names}
@@ -33,12 +33,12 @@ def write_cfg_jsons(mdns_to_cfg_map: Dict[str, str], settings: BuildSettings, in
 
 
 def build_cfg_jsons_from_conf(settings: BuildSettings) -> Dict[str, Any]:
-    wled_config_path = settings.conf_file_path
-    print(f"Loading wled-config file: {wled_config_path}")
-    if not path.isfile(wled_config_path):
-        raise FileNotFoundError(f"No wled-config file found! expected path: {path.abspath(wled_config_path)}")
-    loaded_conf = resolve_json_to_object(wled_config_path)
-    print(f"Building wled-config file: {wled_config_path}"
+    wled_conf_path = settings.conf_file_path
+    print(f"Loading wled-conf file: {wled_conf_path}")
+    if not path.isfile(wled_conf_path):
+        raise FileNotFoundError(f"No wled-conf file found! expected path: {path.abspath(wled_conf_path)}")
+    loaded_conf = resolve_json_to_object(wled_conf_path)
+    print(f"Building wled-conf file: {wled_conf_path}"
           f"{f'(configs: {settings.cfgs_to_build})' if settings.cfgs_to_build else ''}")
 
     # Add all cfg.jsons to our map
@@ -48,7 +48,7 @@ def build_cfg_jsons_from_conf(settings: BuildSettings) -> Dict[str, Any]:
     # TODO: Test override_names
     names = get_mdns_names_from_conf(loaded_conf, settings.cfgs_to_build)
     if len(names) == 0:
-        raise Exception("No configs to build! (Did you do a partial build with names that aren't in the wled-config file?)")
+        raise Exception("No configs to build! (Did you do a partial build with names that aren't in the wled-conf file?)")
     for mdns_or_ip in names:
         print(f"Generating config file for: {mdns_or_ip}")
 

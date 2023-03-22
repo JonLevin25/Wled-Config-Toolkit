@@ -1,8 +1,8 @@
 # Advanced Usage
 WLED configuration can be mostly handled with [cfg.json](https://kno.wled.ge/interfaces/json-api/) files. <br/>
-The config CLI provides a layer above these files called `wled-config.json` files.
+The config CLI provides a layer above these files called `wled-conf.json` files.
 
-`wled-config.jsons` can define that a certain WLED (i.e. your living roon WLED) will receive a certain `cfg.json` (i.e. `livingroom_cfg.json`),
+`wled-conf.jsons` can define that a certain WLED (i.e. your living roon WLED) will receive a certain `cfg.json` (i.e. `livingroom_cfg.json`),
 
 And your bedroom could receive another (`bedroom_cfg.json`).
 
@@ -11,12 +11,12 @@ These building blocks could be files like `base_cfg.json`, `8am_timer_cfg.json`,
 `freds_wifi.json`, etc.
 
 ### cfg.json keys
-As noted above, the `.wled-config.json` may use cfg_modules or direct json, but in the end they are all built into a **single WLED cfg.json per instance.** <br/>
+As noted above, the `.wled-conf.json` may use cfg_modules or direct json, but in the end they are all built into a **single WLED cfg.json per instance.** <br/>
 To learn about these, you can check out the [WLED json api page](https://kno.wled.ge/interfaces/json-api/).
 Most of the keys there are relevant to cfg.json.
 
-## Wled-config file structure
-each key in a `wled-config` file is an identifier of a WLED instance - either an IP or [MDNS](#what-is-mdns-anyway)
+## wled-conf file structure
+each key in a `wled-conf` file is an identifier of a WLED instance - either an IP or [MDNS](#what-is-mdns-anyway)
 
 This is the main config object used -
 you can define wled json keys in 2 ways:
@@ -25,10 +25,10 @@ you can define wled json keys in 2 ways:
 There's a fairly comprehensive guid to defining config in the [data folder](./data/README.md)
 
 ### cfg_modules
-these are JSON files contained in the `cfg_modules` subdirectory that can be reused between controllers/wled-config files.\
+these are JSON files contained in the `cfg_modules` subdirectory that can be reused between controllers/wled-conf files.\
 Specifying the `.json` extension for them is optional.
 
-For example, this wled-config file defines two WLED instances: `wled-livingroom` and `wled-bedroom`.
+For example, this wled-conf file defines two WLED instances: `wled-livingroom` and `wled-bedroom`.
 Each one has their own `cfg.json` cfg_module that will be uploaded
 ```json
 {
@@ -61,7 +61,7 @@ If the same keys are defined in both, later cfg_module will override the previou
 ### $common
 In the example above we have some shared cfg_modules: `cfg_shared` and `cfg_timer_6am`.
 To be clearer and less verbose, we set config-global configs in a `$common` object.
-This wled-config file will be identical to the last one,
+This wled-conf file will be identical to the last one,
 as wled-livingroom & wled-bedroom will implicitly prepend the shared cfg_modules.
 
 
@@ -91,10 +91,10 @@ you can use the `overrides` property, like so
   }
 }
 ```
-This wled-config file has one WLED instance called `wled-livingroom`, which has a config cfg_module called `cfg_livingroom`.
+This wled-conf file has one WLED instance called `wled-livingroom`, which has a config cfg_module called `cfg_livingroom`.
 But it also has a direct JSON override to set the DMX to universe 7.
 
-Override objects are the same as cfg_modules, except they're not in a separate json file, rather the wled-config itself.
+Override objects are the same as cfg_modules, except they're not in a separate json file, rather the wled-conf itself.
 
 ###What is MDNS Anyway?
 mDNS stands for MulticastDNS (Domain name system).

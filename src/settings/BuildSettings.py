@@ -9,7 +9,7 @@ class BuildSettings:
                  cfg_modules_dir: str = DEFAULT_CFG_MODULES_DIR,
                  cfg_cache_dir: str = DEFAULT_CACHE_DIR,
 
-                 # use if you want to select only some of the cfgs in a wled-config file to build
+                 # use if you want to select only some of the cfgs in a wled-conf file to build
                  cfgs_to_build: Union[str, Iterable[str]] = None,
                  renames: Dict[str, str] = None  # format- {oldName: newName}
                  ):

@@ -22,7 +22,7 @@ def get_cfg_json_value_name_mdns(name: str) -> str:
 
 def extract_json_conf_data(conf_obj: Dict[str, Any], name: str, cfg_modules_dir: str) -> Tuple[List[str], Dict]:
     if name not in conf_obj:
-        print(f'wled-config file did not have {name} key.')
+        print(f'wled-conf file did not have {name} key.')
         return [], {}
 
     cfg = conf_obj[name]

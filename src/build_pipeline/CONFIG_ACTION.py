@@ -2,7 +2,7 @@ import enum
 
 
 class CONFIG_ACTION(enum.Enum):
-    # Build wled-config files to generate config files per controller, and write them to file
+    # Build wled-conf files to generate config files per controller, and write them to file
     BUILD_AND_WRITE = 1,
 
     # Upload the generated configs to each specified controller's MDNS / IP

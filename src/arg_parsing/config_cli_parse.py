@@ -17,20 +17,20 @@ class ConfigCLIArgs(argparse.Namespace):
 
 
 def parse_config_args() -> ConfigCLIArgs:
-    parser = argparse.ArgumentParser(description='WLED Config CLI')
+    parser = argparse.ArgumentParser(description='WLED Config Toolkit')
 
-    # Main param - wled-config file
-    parser.add_argument('config', metavar='wled-config.json', help='path to wled-config.json file')
+    # Main param - wled-conf file
+    parser.add_argument('config', metavar='wled-conf.json', help='path to wled-conf.json file')
 
     # Build Actions - build&write, upload, verify
     build_group = parser.add_mutually_exclusive_group(required=True)
-    build_group.add_argument('-b', '--build', action='store_true', help='build all cfg.jsons from the  wled-config file given')
+    build_group.add_argument('-b', '--build', action='store_true', help='build all cfg.jsons from the  wled-conf file given')
     build_group.add_argument('--build-cached', action='store_true',
-                             help='Use the wled-config file only for the names of instances, but use already built configs from the output dir')
+                             help='Use the wled-conf file only for the names of instances, but use already built configs from the output dir')
 
     upload_group = parser.add_mutually_exclusive_group()
     upload_group.add_argument('-u', '--upload', action='store_true',
-                              help='upload cfg.jsons to the ip/mdns given (wled-config file keys). Requires being on the same network and the instances being on and discoverable.')
+                              help='upload cfg.jsons to the ip/mdns given (wled-conf file keys). Requires being on the same network and the instances being on and discoverable.')
     upload_group.add_argument('--upload-ap', action='store_true',
                               help='upload cfg.jsons to WLED-AP (4.3.2.1). Requires being connected to the AP directly.')
 
@@ -48,10 +48,10 @@ def parse_config_args() -> ConfigCLIArgs:
     # Help examples
     parser.usage = parser.format_usage() + f"""Examples:
     
-    python wled_config_cli.py --build --upload --verify-upload wled-config.json
-    python wled_config_cli.py wled-config.json -bu --verify-upload wled-config.json
-    python wled_config_cli.py -bu --verify-upload --cfg-modules-dir="data/cfg_modules" --cache-dir="data/generated" wled-config.json
-        """
+    python wled-config-toolkit.py --build --upload --verify-upload <your.wled-conf.json>
+    python wled-config-toolkit.py -bu --verify-upload <your.wled-conf.json>
+    python wled-config-toolkit.py -bu --verify-upload --cfg-modules-dir="data/cfg_modules" --cache-dir="data/generated" <your.wled-conf.json>
+    """
 
     return parser.parse_args(namespace=ConfigCLIArgs())
 

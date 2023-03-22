@@ -99,11 +99,11 @@ While not strictly necessary for this tutorial, here are what the keys from the 
 | type  | The type of led strip             | 22 is WS281x                                                                        |
 </details>
 
-## Setting up the wled-config.json
-In your wled-config.json file, combine the base configuration and the overrides.
+## Setting up the wled-conf.json
+In your wled-conf.json file, combine the base configuration and the overrides.
 
 <details open>
-<summary><b>/data/home.wled-config.json</b></summary>
+<summary><b>/data/home.wled-conf.json</b></summary>
 
 ```json
 {
