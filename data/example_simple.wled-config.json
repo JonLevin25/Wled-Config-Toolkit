@@ -5,16 +5,7 @@
   },
 
   "192.168.1.20": {
-    "cfg_modules": ["REPLACE_ME_bedroom_cfg.json"],
-    "overrides": {
-      "id": {
-        "mdns": "wled-bedroom",
-        "name": "wled-bedroom"
-      }
-    }
-  },
-  "192.168.1.21": {
-    "cfg_modules": ["REPLACE_ME_livingroom_cfg.json"],
+    "cfg_modules": ["base_cfg.json"],
     "overrides": {
       "id": {
         "mdns": "wled-livingroom",

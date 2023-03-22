@@ -14,7 +14,7 @@ from src.utils.json_utils import json_str_file_or_object, resolve_json_to_object
 def upload_cfg_json(mdns_or_ip, x: json_str_file_or_object):
     return wled_http_api.post_json_via_edit_route(mdns_or_ip, x, "/cfg.json", validate_cfg_object)
 
-    #### regular post to /json/cfg.json - DIDNT WORK!! (got 200 but led settings reset each time, maybe others.)
+    # regular post to /json/cfg.json - DIDNT WORK!! (got 200 but led settings reset each time, maybe others.)
     # loaded_obj = resolve_json_to_object(x)
     # validate_cfg_object(loaded_obj)
     #
@@ -80,7 +80,8 @@ def verify_test_live_panels(mdns_to_files_map: Dict[str, str]):
 
                 print("match OK" if not diff else "JSON MISMATCH!")
                 if diff:
-                    fails_to_reasons_dict[mdns] = f"cfg.json mismatch: \n\t{pformat(diff, indent=2)}"
+                    fails_to_reasons_dict[
+                        mdns] = f"cfg.json mismatch: \n\t{pformat(diff, indent=2)}"
 
             else:
                 print()
@@ -110,11 +111,11 @@ def verify_test_live_panels(mdns_to_files_map: Dict[str, str]):
             continue
 
     num_errors = len(fails_to_reasons_dict)
-    print(f"HTTP Verification Finished", end='')
+    print(f"HTTP Verification Finished")
     if num_errors:
         print(f"PROBLEMS FOUND: {num_errors}")
         for mdns in fails_to_reasons_dict:
             print(f"\t{mdns}: {fails_to_reasons_dict[mdns]}")
     else:
-        print(" OK!")
+        print("Verification OK!")
     print()

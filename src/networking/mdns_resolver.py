@@ -16,7 +16,8 @@ if path.exists(wled_ips_json):
         updateTime = _wled_ips['updateTime']
         _mdnsToIps = _wled_ips['mdnsToIps']
 else:
-    print(f'MDNS->ip map not found! ({path.abspath(wled_ips_json)})')
+    pass  # irrelevant for now
+    # print(f'MDNS->ip map not found! ({path.abspath(wled_ips_json)})')
 
 
 def resolve_mdns(mdns: str):
